@@ -15,3 +15,13 @@ git ones below
 
 7. Add the confs to .conf
 8. put the keyd to /etc/keyd/default.conf
+
+TODOS
+1. See conf files to find specific TODO:s
+2. Update readme to include todos
+3. Update readme to include all dependencies
+4. Create dependency add script
+5. Include auto open things to startupscript. See SS in env
+6. Add home folder management thing so everything is updated from single source of truth
+7. Add browserExtensions: Ublock, Vimium, Dark Reader, (Onetab?)
+~                                                                 
