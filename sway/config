@@ -31,8 +31,6 @@ include /etc/sway/config-vars.d/*
 output eDP-1 scale 1.5
 
 # Language options:
-bindsym ctrl+shift+e exec setxkbmap us
-bindsym ctrl+shift+f exec setxkbmap fi
 #
 # Example configuration:
 #
@@ -254,6 +252,22 @@ bindsym ctrl+shift+l exec swaylock -c 000000
 bindsym ctrl+shift+o exec swaylock -c 000000;exec systemctl suspend
 #default_border pixel <thickness>
 default_floating_border none
-# TODO Update bar to be waybar
+
+
+# Region-select-screenshot to clipboard
+bindsym ctrl+shift+s exec grimshot --notify copy area
+
+# Region-select-screenshot to file
+bindsym ctrl+alt+s exec grimshot --notify save area
+
+    
+# capture the specified screen area to clipboard    
+#bindsym Shift+Alt+s exec grim -g "$(slurp)" - | wl-copy    
+    
+# capture the focused monitor to clipboard    
+#bindsym Shift+Control+s exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+
+
 include /etc/sway/config.d/*
+
 
