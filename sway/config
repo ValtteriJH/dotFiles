@@ -29,6 +29,10 @@ include /etc/sway/config-vars.d/*
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 	output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output eDP-1 scale 1.5
+
+# Language options:
+bindsym ctrl+shift+e exec setxkbmap us
+bindsym ctrl+shift+f exec setxkbmap fi
 #
 # Example configuration:
 #
@@ -225,6 +229,8 @@ bar {
 #    }
 }
 
+exec nm-applet
+
 set $ddterm-id dropdown-terminal
 set $ddterm kitty --class $ddterm-id
 set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
@@ -244,6 +250,8 @@ bindsym Mod4+Escape exec swaymsg '[app_id="$ddterm-id"] scratchpad show' || $ddt
 bindsym --locked XF86AudioPlay exec media-control-sway play-pause
 bindsym --locked XF86AudioNext exec media-control-sway next
 bindsym --locked XF86AudioPrev exec media-control-sway previous
+bindsym ctrl+shift+l exec swaylock -c 000000
+bindsym ctrl+shift+o exec swaylock -c 000000;exec systemctl suspend
 #default_border pixel <thickness>
 default_floating_border none
 # TODO Update bar to be waybar
