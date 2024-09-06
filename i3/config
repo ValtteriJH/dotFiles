@@ -13,9 +13,24 @@ floating_modifier $super
 exec --no-startup-id hsetroot -center ~/.wallpaper.jpg
 exec "xrandr --auto"
 
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Disable While Typing Enabled" 1
 
+# Dark mode GNOME
+#exec --no-startup-id /usr/libexec/gsd-xsettings
+exec --no-startup-id /usr/lib/gsd-xsettings 
 # start a terminal
-bindsym $super+Return exec i3-sensible-terminal
+bindsym $super+Return exec kitty 
+
+# Day / Night mode
+
+bindsym ctrl+shift+i exec xcalib -invert -alter
+
+
+# LangSwap
+#exec "setxkbmap -layout us,fi"
+#exec "setxkbmap -option 'grp:ctrls_toggle'"
+bindsym ctrl+shift+e exec setxkbmap us
+bindsym ctrl+shift+f exec setxkbmap fi
 
 # start dmenu (a program launcher)
 bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
@@ -179,9 +194,6 @@ set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
 #bindsym Mod4+grave exec i3-msg '[app_id="$ddterm-id"] scratchpad show' || $ddterm && sleep .1 && i3-msg '[app_id="$ddterm-id"] >
 #bindsym Mod4+Escape exec i3-msg '[app_id="$ddterm-id"] scratchpad show' || $ddterm && sleep .1 && i3-msg '[app_id="$ddterm-id"]>
 ## ^-- resize again, case moving to different output
-#bindsym --locked XF86AudioPlay exec media-control-sway play-pause
-#bindsym --locked XF86AudioNext exec media-control-sway next
-#bindsym --locked XF86AudioPrev exec media-control-sway previous
 ##default_border pixel <thickness>
 #default_floating_border none
 for_window [title="^scratchpad$"] border 1pixel, floating enable, move scratchpad

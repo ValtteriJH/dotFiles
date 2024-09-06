@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -exo pipefail
+xcalib -invert -alter
+sleep 0.1
+xcalib -invert -alter
+ffplay -v 0 -nodisp -autoexit /home/swider/.flash.mp3
