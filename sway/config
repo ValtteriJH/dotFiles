@@ -69,7 +69,7 @@ output eDP-1 scale 1.5
 	input * {
     xkb_layout "us,fi"
     xkb_variant ""
-    xkb_options "grp:win_space_toggle"
+    xkb_options "grp:ctrl_alt_toggle"
 }
 
 input <identifier> xkb_model "pc101"
@@ -267,7 +267,7 @@ default_floating_border none
 bindsym ctrl+shift+s exec grimshot --notify copy area
 
 # Region-select-screenshot to file
-bindsym ctrl+alt+s exec grimshot --notify save area
+bindsym $mod+ctrl+s exec grimshot --notify save area
 
     
 # capture the specified screen area to clipboard    
