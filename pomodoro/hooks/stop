@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -exo pipefail
+
+# Computer winks at you
+#curBrightness=$(brightnessctl get)
+#brightnessctl set 0
+#sleep 0.1
+#brightnessctl set $curBrightness
+
+# Computer throws a flashbang at you
 xcalib -invert -alter
 sleep 0.1
 xcalib -invert -alter
-ffplay -v 0 -nodisp -autoexit /home/swider/.flash.mp3
+
+
+ffplay -v 0 -nodisp -autoexit ~/.flash.mp3
