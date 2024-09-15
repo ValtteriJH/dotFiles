@@ -16,10 +16,20 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty 
+
+
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+# start dmenu/rofi
+bindsym $mod+shift+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec "rofi -modi drun,run -show drun -font 'System San Francisco Display 11'"
+#bindsym $mod+d exec ~/.config/rofi/bin/launcher_colorful
+bindsym $mod+d exec rofi -no-lazy-grab -show drun -modi drun -theme .config/rofi/launchers/misc/blurryContrast.rasi
+
 
 include /etc/sway/config-vars.d/*
 
@@ -89,7 +99,9 @@ input <identifier> xkb_model "pc101"
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+# TODO HOX
+#    bindsym $mod+d exec $menu
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
