@@ -2,6 +2,9 @@
 set $super Mod4
 set $alt Mod1
 
+# Start compositor
+exec --no-startup-id picom
+
 # set font
 font pango:Ionicons 9, Poppins Regular 9
 
