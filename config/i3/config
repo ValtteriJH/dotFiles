@@ -39,7 +39,7 @@ bindsym ctrl+shift+f exec setxkbmap fi
 
 ## start dmenu (a program launcher)
 #bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
-bindsym $super+d exec rofi -no-lazy-grab -show drun -modi drun -theme .config/rofi/launchers/misc/blurryContrast.rasi
+bindsym $super+d exec rofi -no-lazy-grab -m -1 -show drun -modi drun -theme .config/rofi/launchers/misc/blurryContrast.rasi
 #-fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
 #-sb '#289c93' -sf '#141c21'"
 
