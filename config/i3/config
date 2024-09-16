@@ -3,15 +3,15 @@ set $super Mod4
 set $alt Mod1
 
 # set font
-font pango:Ionicons 9, Poppins Regular 9
+font pango:~/.local/share/fonts/SauceCodeProNerdFontMono-Regular.ttf: SauceCodePro Nerd Font Mono,SauceCodePro NFM:style=Regular 9
 
 # use mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 #set $term kitty
 
 # autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.jpg
-exec "xrandr --auto"
+exec --no-startup-id ~/.setupDesktop.sh
+
 
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Disable While Typing Enabled" 1
 
@@ -28,13 +28,26 @@ bindsym ctrl+shift+i exec xcalib -invert -alter
 # LangSwap
 #exec "setxkbmap -layout us,fi"
 #exec "setxkbmap -option 'grp:ctrls_toggle'"
+exec setxkbmap us
 bindsym ctrl+shift+e exec setxkbmap us
 bindsym ctrl+shift+f exec setxkbmap fi
 
 # start dmenu (a program launcher)
-bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
--fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
--sb '#289c93' -sf '#141c21'"
+#bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
+#-fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
+#-sb '#289c93' -sf '#141c21'"
+
+## start dmenu (a program launcher)
+#bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
+bindsym $super+d exec rofi -no-lazy-grab -show drun -modi drun -theme .config/rofi/launchers/misc/blurryContrast.rasi
+#-fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
+#-sb '#289c93' -sf '#141c21'"
+
+
+# start dmenu/rofi
+bindsym $super+shift+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec "rofi -modi drun,run -show drun -font 'System San Francisco Display 11'"
+
 
 # common apps keybinds
 bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
@@ -201,6 +214,7 @@ exec urxvtc -name scratchpad -geometry 86x24-8-32
 
 mouse_warping none
 
+exec hsetroot -fill ~/.wallpaper.jpg
 # Moving workspaces between screens 
 bindsym $super+p move workspace to output right
 # TODO Automatic screen detection, xrandr --auto if only single screen, xrandr custom if many
