@@ -1,0 +1,209 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+# set font
+font pango:Ionicons 9, Poppins Regular 9
+
+# use mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+#set $term kitty
+
+# autostart
+exec --no-startup-id hsetroot -center ~/.wallpaper.jpg
+exec "xrandr --auto"
+
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Disable While Typing Enabled" 1
+
+# Dark mode GNOME
+#exec --no-startup-id /usr/libexec/gsd-xsettings
+exec --no-startup-id /usr/lib/gsd-xsettings 
+# start a terminal
+bindsym $super+Return exec kitty 
+
+# Day / Night mode
+
+bindsym ctrl+shift+i exec xcalib -invert -alter
+
+# LangSwap
+#exec "setxkbmap -layout us,fi"
+#exec "setxkbmap -option 'grp:ctrls_toggle'"
+bindsym ctrl+shift+e exec setxkbmap us
+bindsym ctrl+shift+f exec setxkbmap fi
+
+# start dmenu (a program launcher)
+bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
+-fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
+-sb '#289c93' -sf '#141c21'"
+
+# common apps keybinds
+bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
+bindsym $super+Shift+l exec i3lock -c 000000 
+bindsym $super+Shift+o exec i3lock -c 000000  ; exec systemctl suspend
+# -i ~/.lock.png
+
+#bindsym $super+w exec zen 
+bindsym $super+e exec thunar
+
+# change volume and brightness
+#bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%" 
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+# above possibly deprecated. Try out pamixer -i 5 & pamixer -d 5
+bindsym XXF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0"  
+# kill focused window
+bindsym $super+shift+q kill
+bindsym $alt+F4 kill
+
+# change focus
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+
+# move focused window
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+# split in horizontal or vertical orientation
+bindsym $super+b split h
+bindsym $super+v split v
+
+# change split direction for already opened windows
+bindsym $super+s layout toggle split
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $super+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $super+Control+Right workspace next
+bindsym $super+Control+Left workspace prev
+bindsym $super+1 workspace 1:I
+bindsym $super+2 workspace 2:II
+bindsym $super+3 workspace 3:III
+bindsym $super+4 workspace 4:IV
+bindsym $super+5 workspace 5:V
+bindsym $super+6 workspace 6:VI
+
+bindsym $super+7 workspace 7:VII
+bindsym $super+8 workspace 8:VIII
+bindsym $super+9 workspace 9:IX
+bindsym $super+0 workspace 10:X
+
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1:I
+bindsym $super+Shift+2 move container to workspace 2:II
+bindsym $super+Shift+3 move container to workspace 3:III
+bindsym $super+Shift+4 move container to workspace 4:IV
+bindsym $super+Shift+5 move container to workspace 5:V
+bindsym $super+Shift+6 move container to workspace 6:VI
+
+bindsym $super+Shift+7 move container to workspace 7:VII
+bindsym $super+Shift+8 move container to workspace 8:VIII
+bindsym $super+Shift+9 move container to workspace 9:IX
+bindsym $super+Shift+0 move container to workspace 10:X
+
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+shift+c exec "i3-msg restart"
+
+# exit i3
+bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' \
+-b 'Yes' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
+	bindsym Return mode "default"
+	}
+bindsym $super+r mode "resize"
+# pane
+bar {
+	status_command i3status
+	position top
+	workspace_min_width 24
+	#padding 2px 8px 2px 8px
+	strip_workspace_numbers yes
+
+	colors {
+	background #141c21
+	statusline #141c21
+	separator #141c21
+
+	# colour of border, background, and text
+	focused_workspace #141c21 #d12f2c #93a1a1
+	active_workspace #141c21 #141c21 #93a1a1
+	inactive_workspace #141c21 #141c21 #93a1a1
+	urgent_workspace #141c21 #b08500 #93a1a1
+	}
+}
+
+# colour of border, background, text, indicator, and child_border
+client.focused #d12f2c #263640 #93a1a1 #696ebf #2587cc1
+client.focused_inactive #263640 #b08500 #93a1a1 #263640 #263640
+client.unfocused #263640 #b08500 #93a1a1 #263640 #263640
+client.urgent #263640 #b08500 #93a1a1 #263640 #263640
+client.placeholder #263640 #b08500 #93a1a1 #263640 #263640
+client.background #263640
+
+# window rules, you can find the window class using xprop
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
+for_window [class=".*"] border pixel 8
+hide_edge_borders smart
+#gaps inner 12
+#smart_gaps on
+
+set $ddterm-id dropdown-terminal
+set $ddterm bash --class $ddterm-id
+set $ddterm-resize resize set 100ppt 40ppt, move position 0 0
+
+# resize/move new dropdown terminal windows
+#for_window [app_id="$ddterm-id"] {
+#    floating enable
+#    $ddterm-resize
+#    move to scratchpad
+#    scratchpad show
+#}
+#
+## show existing or start new dropdown terminal
+#bindsym Mod4+grave exec i3-msg '[app_id="$ddterm-id"] scratchpad show' || $ddterm && sleep .1 && i3-msg '[app_id="$ddterm-id"] >
+#bindsym Mod4+Escape exec i3-msg '[app_id="$ddterm-id"] scratchpad show' || $ddterm && sleep .1 && i3-msg '[app_id="$ddterm-id"]>
+## ^-- resize again, case moving to different output
+##default_border pixel <thickness>
+#default_floating_border none
+for_window [title="^scratchpad$"] border 1pixel, floating enable, move scratchpad
+bindsym $super+x [instance="scratchpad"] scratchpad show; sticky enable
+exec urxvtc -name scratchpad -geometry 86x24-8-32
+
+mouse_warping none
+
+# Moving workspaces between screens 
+bindsym $super+p move workspace to output right
+# TODO Automatic screen detection, xrandr --auto if only single screen, xrandr custom if many
+# DO WITH A key combination which detects and syncs the current setup
+# TODO scratchpad permaconsole
+# TODO Fix statusbar - change to https://github.com/greshake/i3status-rust
