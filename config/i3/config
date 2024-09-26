@@ -29,6 +29,7 @@ bindsym ctrl+shift+i exec xcalib -invert -alter
 #exec "setxkbmap -layout us,fi"
 #exec "setxkbmap -option 'grp:ctrls_toggle'"
 exec setxkbmap us
+
 bindsym ctrl+shift+e exec setxkbmap us
 bindsym ctrl+shift+f exec setxkbmap fi
 
@@ -185,8 +186,12 @@ client.background #263640
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
-for_window [class=".*"] border pixel 8
+for_window [class=".*"] border pixel 1
 hide_edge_borders smart
+
+#gaps inner 30
+#gaps outer -30
+
 #gaps inner 12
 #smart_gaps on
 
