@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -exo pipefail
+# Set up 5 m start timer, after which you can quit or continue the full duration
+
+pomodoro break 5m

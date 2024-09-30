@@ -21,6 +21,17 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 # start a terminal
 bindsym $super+Return exec kitty 
 
+## Scratchpad
+# Make the currently focused window a scratchpad
+bindsym $super+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $super+minus scratchpad show
+
+# Show the sup-mail scratchpad window, if any.
+# bindsym mod4+s [title="^Sup ::"] scratchpad show
+
+
 # Day / Night mode
 
 bindsym ctrl+shift+i exec xcalib -invert -alter
@@ -70,7 +81,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%" 
 bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
 # above possibly deprecated. Try out pamixer -i 5 & pamixer -d 5
-bindsym XXF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0"  
+# bindsym XXF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0%"  
 # kill focused window
 bindsym $super+shift+q kill
 bindsym $alt+F4 kill
@@ -102,11 +113,11 @@ bindsym $super+s layout toggle split
 # enter fullscreen mode for the focused container
 bindsym $super+f fullscreen toggle
 
-# toggle tiling / floating
-bindsym $super+space floating toggle
-
 # change focus between tiling / floating windows
-bindsym $super+Shift+space focus mode_toggle
+bindsym $super+space focus mode_toggle
+
+# toggle tiling / floating
+bindsym $super+Shift+space floating toggle  
 
 # switch to workspace
 bindsym $super+Control+Right workspace next
