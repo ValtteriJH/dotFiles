@@ -26,10 +26,11 @@ tmux split-window -h -t 0 -l '70%' "btop"
 # Split the GFG_Code window vertically and send an 'echo' command to the new pane
 tmux select-pane -t 0
 tmux split-window -v -t 0 -l '95%'
-tmux send-keys -t 0 "pomodoro start -w;pomodoro finish" 
+tmux send-keys -t 0 "neofetch" C-m
+tmux send-keys -t 0 "pomodoro start -w -d 112 -t \"112/26 creating | 25/10 studying\";pomodoro finish"
 tmux select-pane -t 2
 
-tmux send-keys -t 1 "neofetch" C-m
+tmux send-keys -t 1 "curl wttr.in/Tampere" C-m
 tmux send-keys -t 1 # "i3lock -c 000000"
 tmux select-pane -t 1
 
