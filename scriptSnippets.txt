@@ -1,1 +1,0 @@
-pomodoro start -w ;pomodoro finish # For adding stop effects after timer ran out, no external watch either
