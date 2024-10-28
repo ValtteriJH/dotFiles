@@ -32,7 +32,7 @@ tmux select-pane -t 2
 
 tmux send-keys -t 1 "curl wttr.in/Tampere" C-m
 tmux send-keys -t 1 # "i3lock -c 000000"
-tmux select-pane -t 1
+tmux select-pane -t 0
 
 
 #tmux send-keys -t 2 "i3lock -c 000000"
