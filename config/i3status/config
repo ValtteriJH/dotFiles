@@ -17,26 +17,18 @@ general {
 }
 
 order += "volume master"
-#order += "wireless _first_"
+order += "wireless _first_"
 order += "disk /"
 order += "memory"
 order += "cpu_temperature 0"
-
-#order += "tztime local"
-
+# order += "tztime localdate"
+order += "battery 1"
 order += "tztime FI"
-
-
-#order += "tztime localdate"
-#order += "battery 1"
-#order += "ethernet eth0"
-#order += "ethernet enp11s0" 
-#order += "ethernet _first_" 
-#order += "tztime localtime"
+# order += "tztime localtime"
 # order += "load"
 # order += "cpu_usage"
-#order += "disk ~/"
-#order += "ipv6"
+# order += "disk /home"
+# order += "ipv6"
 # order += "run_watch VPN"
 # order += "ethernet eno16777736"
 # order += "run_watch DHCP"
@@ -56,10 +48,6 @@ volume master {
         device = "default"
         mixer = "Master"
         mixer_idx = 0
-}
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
-        hide_if_equals_localtime = false
 }
 
 wireless _first_ {
@@ -117,18 +105,8 @@ run_watch VPN {
         pidfile = "/var/run/vpnc/pid"
 }
 
-ethernet eth0{
-        format_up = " %ip "
-	format_up = "  "  
-}
 
-ethernet enp11s0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = " %ip "
-        format_down = "  "
-}
-
-ethernet _first_ {
+ethernet eno16777736 {
         # if you use %speed, i3status requires root privileges
         format_up = " %ip "
         format_down = "  "
