@@ -13,4 +13,4 @@ sleep 0.1
 xcalib -invert -alter
 
 
-ffplay -v 0 -nodisp -autoexit ~/.flash.mp3
+ffplay -v 0 -nodisp -autoexit -af "volume=0.3" ~/.flash.mp3
