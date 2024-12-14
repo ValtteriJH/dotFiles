@@ -8,9 +8,9 @@ set -exo pipefail
 #brightnessctl set $curBrightness
 
 # Computer throws a flashbang at you
-xcalib -invert -alter
+xrandr-invert-colors
 sleep 0.1
-xcalib -invert -alter
+xrandr-invert-colors
 
 
 ffplay -v 0 -nodisp -autoexit -af "volume=0.3" ~/.flash.mp3
