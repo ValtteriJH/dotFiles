@@ -99,10 +99,10 @@ vim.g.have_nerd_font = true
 --  For more options, you can see `:help option-list`
 
 -- Make line numbers default
-vim.opt.number = true
+-- vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -237,7 +237,6 @@ require('lazy').setup({
   --
   -- Use `opts = {}` to force a plugin to be loaded.
   --
-
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -253,6 +252,25 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+    },
+  },
+
+  {
+    'christoomey/vim-tmux-navigator',
+    event = 'VeryLazy', -- Sets the loading event to 'VimEnter'
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+    },
+    keys = {
+      { '<M-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<M-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<M-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<M-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<M-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
 
