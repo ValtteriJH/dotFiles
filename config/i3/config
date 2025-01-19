@@ -16,6 +16,8 @@ exec --no-startup-id picom --experimental-backends
 
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Disable While Typing Enabled" 1
 
+exec dbus-launch nm-applet
+
 # Dark mode GNOME
 #exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id /usr/lib/gsd-xsettings 
@@ -186,7 +188,15 @@ bindsym $super+r mode "resize"
 bar {
 	status_command i3status
 	position top
-	workspace_min_width 24
+	workspace_min_width 10
+	tray_padding 0
+
+
+	# TODO FIX system tray, its flickering. nm applet is missing, somethings wrong. Appeared on desktop
+
+	tray_output kys
+
+
 	#padding 2px 8px 2px 8px
 	strip_workspace_numbers yes
 
