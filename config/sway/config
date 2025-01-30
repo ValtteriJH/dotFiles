@@ -242,7 +242,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
 
-	swaybar_command waybar
+    swaybar_command waybar
 #    position top
 #
 #    # When the status_command prints a new line to stdout, swaybar updates.
@@ -278,7 +278,14 @@ bindsym --locked XF86AudioPlay exec media-control-sway play-pause
 bindsym --locked XF86AudioNext exec media-control-sway next
 bindsym --locked XF86AudioPrev exec media-control-sway previous
 bindsym ctrl+shift+l exec swaylock -c 000000
-bindsym ctrl+shift+o exec swaylock -c 000000;exec systemctl suspend
+
+bindsym --no-repeat ctrl+shift+o exec systemctl suspend && swaylock -c 000000 
+
+#bindsym --no-repeat ctrl+shift+o exec swayidle -w \
+#timeout 0 'swaylock -f -c 000000' \
+#timeout 1 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#timeout 2 'systemctl suspend' before-sleep 'swaylock -f -c 000000' #bindsym ctrl+shift+o exec systemctl suspend
+#
 #default_border pixel <thickness>
 default_floating_border none
 
