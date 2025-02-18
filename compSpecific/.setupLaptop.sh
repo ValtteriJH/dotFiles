@@ -2,6 +2,8 @@
 # Restart mouse drivers
 # sudo systemctl restart logid
 
+eval "$(ssh-agent -s)"
+
 # XRANDR FOR i3 ext. screens!
 xrandr --output DisplayPort-6 --primary
 xrandr --output eDP --auto --below DisplayPort-6
