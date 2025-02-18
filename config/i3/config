@@ -10,7 +10,7 @@ floating_modifier $super
 #set $term kitty
 
 # autostart
-exec --no-startup-id ~/.setupDesktop.sh
+exec --no-startup-id ~/.setupLaptop.sh
 
 exec --no-startup-id picom --experimental-backends
 
@@ -194,7 +194,8 @@ bar {
 
 	# TODO FIX system tray, its flickering. nm applet is missing, somethings wrong. Appeared on desktop
 
-	tray_output kys
+	tray_output eDP # screenxrandrname | kys for enable disable
+
 
 
 	#padding 2px 8px 2px 8px

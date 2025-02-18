@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=System Settings
+GenericName=gnome system control panel
+Keywords=Preferences;Settings
+Exec=gnome-control-center
+
+Icon=org.gnome.Settings
+Terminal=false
+StartupNotify=true
+Type=Application
+MimeType=inode/directory;
+Actions=open-home;open-computer;open-trash;
+
+Categories=GNOME;GTK;Settings;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-control-center
+X-GNOME-Bugzilla-Component=shell
+X-GNOME-Bugzilla-Version=41.7
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=Preferences;Settings;
+# Translators: Do NOT translate or transliterate this text (these are enum types)!
+X-Purism-FormFactor=Workstation;Mobile;
+X-Ubuntu-Gettext-Domain=gnome-control-center-2.0

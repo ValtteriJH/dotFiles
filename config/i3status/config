@@ -78,12 +78,13 @@ tztime localdate {
 
 battery 1 {
         format = "<span color='#34e0bf' size='large'>%status</span> <span bgcolor='#34e0bf' foreground='black'> %percentage </span>"
+
         format_down = "No battery"
         status_chr = "⚡ "
         status_bat = " "
         status_unk = "? UNK"
         status_full = "󰂄 FULL"
-        path = "/sys/class/power_supply/BAT%d/uevent"
+        path = "/sys/class/power_supply/BAT0/uevent"
         low_threshold = 10
         last_full_capacity = true
 }

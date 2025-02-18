@@ -2,6 +2,12 @@ Confs for my machines, surface pro with kernel patch, nvidia machines with i3
 
 packages: sudo apt install
 sway brightnessctl pulseaudio pavucontrol kitty btop
+or requirements.sh
+
+For perma darkmode add to /etc/environment
+export GTK_THEME=Adwaota-dark
+
+drop settings.desktop in ubuntu systems to /usr/share/applications
 
 git ones below
 
