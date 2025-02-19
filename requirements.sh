@@ -5,4 +5,4 @@ chsh -s $(which zsh)
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
+# For laptops sudo nvim /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf change the setting to 2 for faster wifi
