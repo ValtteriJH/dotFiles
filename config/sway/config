@@ -10,7 +10,7 @@ default_border pixel
 default_floating_border pixel
 # options none pixel default
 set $opacity 0.9
-focus_follows_mouse no
+focus_follows_mouse yes
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 ### Variables
