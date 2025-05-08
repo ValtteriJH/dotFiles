@@ -123,9 +123,12 @@ input <identifier> xkb_model "pc101"
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#MOVE BETWEEN DISPLAYS
+bindsym $mod+p exec swaymsg -t get_outputs | jq '.[(map(.focused) | index(true) + 1) % length].name' | xargs swaymsg move workspace to
 #
 # Moving around:
 #
+
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
