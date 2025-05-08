@@ -10,10 +10,13 @@ default_border pixel
 default_floating_border pixel
 # options none pixel default
 set $opacity 0.9
+focus_follows_mouse no
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 ### Variables
 #
+# Hide mouse cursor after a period of inactivity.
+seat seat0 hide_cursor 3000
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
