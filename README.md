@@ -20,6 +20,8 @@ git ones below
 8. put the keyd to /etc/keyd/default.conf
 
 TODOS
+xhost + local:
+for sway auth
 1. See conf files to find specific TODO:s
 2. Update readme to include all dependencies
 3. Create dependency add script
