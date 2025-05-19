@@ -39,6 +39,10 @@ bindsym $super+minus scratchpad show
 
 bindsym ctrl+shift+i exec xrandr-invert-colors
 
+# Switch wallpaper
+bindsym ctrl+shift+p exec shuffler
+
+
 # LangSwap
 #exec "setxkbmap -layout us,fi"
 #exec "setxkbmap -option 'grp:ctrls_toggle'"
@@ -259,6 +263,7 @@ exec urxvtc -name scratchpad -geometry 86x24-8-32
 
 mouse_warping none
 
+exec shuffler
 exec hsetroot -fill ~/.wallpaper.jpg
 # Moving workspaces between screens 
 bindsym $super+p move workspace to output right
