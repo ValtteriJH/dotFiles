@@ -182,10 +182,14 @@ bindsym $super+shift+c exec "i3-msg restart"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	bindsym Left resize shrink width 5 px or 5 ppt
-	bindsym Down resize grow height 5 px or 5 ppt
-	bindsym Up resize shrink height 5 px or 5 ppt
-	bindsym Right resize grow width 5 px or 5 ppt
+	bindsym Right resize shrink width 5 px or 5 ppt
+	bindsym Up resize grow height 5 px or 5 ppt
+	bindsym Down resize shrink height 5 px or 5 ppt
+	bindsym Left resize grow width 5 px or 5 ppt
+	bindsym l resize shrink width 5 px or 5 ppt
+	bindsym k resize grow height 5 px or 5 ppt
+	bindsym j resize shrink height 5 px or 5 ppt
+	bindsym h resize grow width 5 px or 5 ppt
 	bindsym Return mode "default"
 	}
 bindsym $super+r mode "resize"
