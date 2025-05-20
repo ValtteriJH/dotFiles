@@ -1,4 +1,4 @@
-sudo apt install -y i3 libfuse2 git tmux kitty zsh clang gcc hsetroot picom rofi thunar ranger python-is-python3 xclip tlp playerctl brightnessctl
+sudo apt install -y i3 libfuse2 git tmux kitty zsh clang gcc hsetroot picom rofi thunar ranger python-is-python3 xclip tlp playerctl brightnessctl nodejs
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 chsh -s $(which zsh)
 
@@ -9,5 +9,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # TLP is also for laptops, espcially thinkpads. Power control inependent of the charger connection. Can force discharge to conserve battey
 # FOSS projects:
 # https://github.com/zoltanp/xrandr-invert-colors
+# Necessary appimages
 # NVIM
+# Obsidian
+# Go
+# Shuffler
 # pomodoro-cli

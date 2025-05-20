@@ -20,6 +20,7 @@ git ones below
 8. put the keyd to /etc/keyd/default.conf
 
 TODOS
+make shuffler binary easily accessible, update git
 xhost + local:
 for sway auth
 1. See conf files to find specific TODO:s
