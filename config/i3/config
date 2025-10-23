@@ -97,12 +97,15 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
 bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 
+bindsym shift+ctrl+XF86AudioRaiseVolume exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 3"}'# | bash
 bindsym shift+XF86AudioRaiseVolume exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 1"}'# | bash
 bindsym shift+XF86AudioLowerVolume exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 0.5"}'# | bash
+bindsym shift+ctrl+XF86AudioLowerVolume exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 0.7"}'# | bash
 
 
 
 bindsym shift+XF86AudioMute exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 0.2"}'# | bash
+bindsym shift+ctrl+XF86AudioMute exec xrandr | cat | grep ' connected' | awk '{print "xrandr --output " $1 " --brightness 0.3"}'# | bash
 
 # above possibly deprecated. Try out pamixer -i 5 & pamixer -d 5
 # bindsym XXF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0%"  
