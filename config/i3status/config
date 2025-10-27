@@ -38,7 +38,7 @@ tztime FI {
   #  format = "<span color='#00FF00'>%time</span>"
 format = "<span color='#00BFA5' size='large'> ⧖ </span> <span bgcolor='#12FF98' foreground='black'> %time</span>"
 
-    format_time = "%Y/%m/%d %I:%M:%S %P %Z"
+    format_time = "%d/%m/%Y %I:%M:%S %P %Z"
     timezone = "Europe/Helsinki"
 }
 
