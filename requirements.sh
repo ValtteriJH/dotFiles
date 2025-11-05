@@ -5,17 +5,16 @@ cargo install alacritty
 # Alacritty proper install
 sudo cp ~/.cargo/bin/alacritty /usr/bin/
 
-sudo apt git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+sudo git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 chsh -s $(which zsh)
 
 # zsh plugins
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
 git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
-
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 sudo cp ./Alacritty.desktop /usr/share/applications
