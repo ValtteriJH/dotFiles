@@ -8,6 +8,7 @@ font pango:~/.local/share/fonts/SauceCodeProNerdFontMono-Regular.ttf: SauceCodeP
 # use mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 #set $term kitty
+#set $term alacritty
 
 # autostart
 exec --no-startup-id ~/.setupLaptop.sh
@@ -22,7 +23,7 @@ exec dbus-launch nm-applet
 #exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id /usr/lib/gsd-xsettings 
 # start a terminal
-bindsym $super+Return exec kitty 
+bindsym $super+Return exec alacritty 
 
 ## Scratchpad
 # Make the currently focused window a scratchpad
