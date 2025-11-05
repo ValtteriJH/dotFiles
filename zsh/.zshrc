@@ -114,6 +114,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+export TERM=linux
+export TERMINFO=/etc/terminfo
+
 export PATH=$PATH:/usr/local/go/bin
 export VISUAL=nvim;
 export EDITOR=nvim;
