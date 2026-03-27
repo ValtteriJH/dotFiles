@@ -54,7 +54,8 @@ sudo cp -r ./pomodoro/ ~/.pomodoro/
 
 #
 # Install keyd and xrandr-invert-colors and clone openpomo 
-#
+# https://pachoyan.github.io/posts/wsl-configure-alacritty-windows/
+# For WSL2 Integration
 cd ~/codes/foss/
 git clone https://github.com/zoltanp/xrandr-invert-colors.git
 git clone https://github.com/open-pomodoro/openpomodoro-cli.git
