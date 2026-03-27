@@ -1,0 +1,10 @@
+# DEBUG: ➜  ~ sudo journalctl --dmesg --follow
+# FW logs
+
+
+UFW to allow zscaler comms
+
+sudo ufw allow in on zcctun0 proto any from 10.0.0.0/8    to 100.64.0.1 port 9000
+sudo ufw allow in on zcctun0 proto any from 100.64.0.0/16 to 100.64.0.1 port 9000
+sudo ufw allow in on zcctun0 proto any from 100.64.0.0/16 to 100.64.0.1 port 9010
+sudo ufw allow in on zcctun0 proto udp from 100.64.0.0/16 to 100.64.0.1

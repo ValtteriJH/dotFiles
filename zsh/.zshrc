@@ -115,9 +115,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-export TERM=linux
-export TERMINFO=/etc/terminfo
+# Messes with alacritty
+# export TERM=linux
+# export TERMINFO=/etc/terminfo
+# Messes with alacritty
 
 export PATH=$PATH:/usr/local/go/bin
 export VISUAL=nvim;

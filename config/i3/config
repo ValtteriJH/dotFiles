@@ -93,8 +93,11 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%" 
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+
+# https://askubuntu.com/questions/1206146/maintaining-custom-left-right-audio-balance-i-e-ratio-when-changing-volume-le
+# ➜  ~ pactl set-sink-volume 28 60% 55% # For balancing analog outputs
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +3dB" 
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -3dB"
 bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 
@@ -271,8 +274,7 @@ exec urxvtc -name scratchpad -geometry 86x24-8-32
 
 mouse_warping none
 
-exec shuffler
-exec hsetroot -fill ~/.wallpaper.jpg
+exec hsetroot -fill ~/.config/wpShuffler/.wallpaper.jpg
 # Moving workspaces between screens 
 bindsym $super+p move workspace to output right
 # TODO Automatic screen detection, xrandr --auto if only single screen, xrandr custom if many

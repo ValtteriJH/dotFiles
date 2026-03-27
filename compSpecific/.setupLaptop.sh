@@ -5,11 +5,13 @@
 eval "$(ssh-agent -s)"
 
 # XRANDR FOR i3 ext. screens!
-xrandr --output DisplayPort-6 --primary
-xrandr --output eDP --auto --below DisplayPort-6
-xrandr --output DisplayPort-8 --auto --right-of DisplayPort-6
-xrandr --output DisplayPort-8 --rotate left
+
+xrandr --auto
+xrandr --output DisplayPort-1 --right-of eDP
+xrandr --output HDMI-A-0 --right-of DisplayPort-1
+xrandr --output HDMI-A-0 --rotate right
+
+hsetroot -fill ~/.config/wpShuffler/.wallpaper.jpg
 
 picom --experimental-backends
 
-hsetroot -fill .wallpaper.jpg

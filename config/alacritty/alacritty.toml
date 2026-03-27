@@ -11,6 +11,10 @@ bindings = [
 { key = "Return", mods = "Control|Shift", action = "CreateNewWindow" },
 { key = "L", mods = "Control|Shift", chars = "l" },
 # { key = "Return", mods = "Control|Shift", mode = "Vi|Search|Alt|AppCursor|AppKeypad", action = "CreateNewWindow"},
+
+{ key = "+", mods = "Control|Shift", action = "IncreaseFontSize" },
+{ key = "_", mods = "Shift|Control", action = "DecreaseFontSize" },
+{ key = "Key0", mods = "Control|Shift", action = "ResetFontSize" },
 ]
 
 
