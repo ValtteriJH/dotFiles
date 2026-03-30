@@ -9,8 +9,8 @@ set -exo pipefail
 
 # Computer throws a flashbang at you
 xrandr-invert-colors
-sleep 0.1
-xrandr-invert-colors
-
-
-ffplay -v 0 -nodisp -autoexit -af "volume=0.3" ~/.flash.mp3
+# sleep 0.1
+# xrandr-invert-colors
+# 
+# 
+# ffplay -v 0 -nodisp -autoexit -af "volume=0.3" ~/.flash.mp3
