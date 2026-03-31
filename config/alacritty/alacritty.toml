@@ -15,6 +15,7 @@ bindings = [
 { key = "+", mods = "Control|Shift", action = "IncreaseFontSize" },
 { key = "_", mods = "Shift|Control", action = "DecreaseFontSize" },
 { key = "Key0", mods = "Control|Shift", action = "ResetFontSize" },
+{ key = "R", mods = "Alt", chars = ". ranger\n" },
 ]
 
 
