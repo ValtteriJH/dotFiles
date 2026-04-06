@@ -2,20 +2,24 @@
 import = [
     "~/.config/alacritty/themes/themes/aura.toml"
 ]
-#key_bindings:
-#  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 
+[env]
+WINIT_X11_SCALE_FACTOR = "1.66"
 
 [keyboard]
 bindings = [
 { key = "Return", mods = "Control|Shift", action = "CreateNewWindow" },
+{ key = "R", mods = "Alt", chars = ". ranger\n" },
+# { key = "A", mods = "Control|Shift", chars = "ls -la\n" },
+# { key = "A", mods = "Control|Shift", chars = ". ranger\n" },
+# { key = "P", mods = "Alt", command = { program = "xrandr-invert-colors"} },  
+# { key = "Return", mods = "Control|Shift", command = { program = "alacritty", args = ["-e", "ranger"] } },
 { key = "L", mods = "Control|Shift", chars = "l" },
 # { key = "Return", mods = "Control|Shift", mode = "Vi|Search|Alt|AppCursor|AppKeypad", action = "CreateNewWindow"},
 
 { key = "+", mods = "Control|Shift", action = "IncreaseFontSize" },
 { key = "_", mods = "Shift|Control", action = "DecreaseFontSize" },
 { key = "Key0", mods = "Control|Shift", action = "ResetFontSize" },
-{ key = "R", mods = "Alt", chars = ". ranger\n" },
 ]
 
 
@@ -31,4 +35,7 @@ decorations_theme_variant = "Dark"
 # bold.family = "Cascadia Code PL"
 # italic.family = "Cascadia Code PL"
 # bold_italic.family = "Cascadia Code PL"
+#IncreaseFontSize
+#DecreaseFontSize
+#ResetFontSize
 size = 10
