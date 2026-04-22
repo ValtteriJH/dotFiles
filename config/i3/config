@@ -11,7 +11,7 @@ floating_modifier $super
 #set $term alacritty
 
 # autostart
-exec --no-startup-id ~/.setupLaptop.sh
+exec --no-startup-id ~/.setupWork.sh
 
 exec --no-startup-id picom --experimental-backends
 
@@ -231,7 +231,9 @@ bar {
 }
 
 # colour of border, background, text, indicator, and child_border
-client.focused #d12f2c #263640 #93a1a1 #696ebf #2587cc1
+
+# client.focused #d12f2c #263640 #93a1a1 #696ebf #2587cc1
+client.focused #0aff84 #0aff84 #0aff84 #0aff84 #0aff84 #0aff84
 client.focused_inactive #263640 #b08500 #93a1a1 #263640 #263640
 client.unfocused #263640 #b08500 #93a1a1 #263640 #263640
 client.urgent #263640 #b08500 #93a1a1 #263640 #263640
@@ -241,7 +243,7 @@ client.background #263640
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 
 hide_edge_borders smart
 
 #gaps inner 30
