@@ -151,6 +151,11 @@ bindsym $super+space focus mode_toggle
 bindsym $super+Shift+space floating toggle  
 
 # switch to workspace
+bindsym $super+Control+o exec --no-startup-id ~/.setup-focus.sh
+bindsym $super+Control+n exec --no-startup-id ~/.setup-home.sh
+bindsym $super+Control+a exec --no-startup-id xrandr --auto;exec hsetroot -fill ~/.config/wpShuffler/.wallpaper.jpg
+
+
 bindsym $super+Control+Right workspace next
 bindsym $super+Control+Left workspace prev
 bindsym $super+1 workspace 1:I
@@ -232,6 +237,7 @@ bar {
 
 # colour of border, background, text, indicator, and child_border
 
+# OLD
 # client.focused #d12f2c #263640 #93a1a1 #696ebf #2587cc1
 client.focused #0aff84 #0aff84 #0aff84 #0aaa84 #0aff84 #0aff84
 client.focused_inactive #263640 #b08500 #93a1a1 #263640 #263640
@@ -244,6 +250,7 @@ client.background #263640
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
 for_window [class=".*"] border pixel 
+#for_window [class=".*"] border pixel 0, smart_gaps off,gaps outer 8, hide_edge_borders smart
 hide_edge_borders smart
 
 #gaps inner 30
@@ -279,6 +286,9 @@ mouse_warping none
 exec hsetroot -fill ~/.config/wpShuffler/.wallpaper.jpg
 # Moving workspaces between screens 
 bindsym $super+p move workspace to output right
+bindsym $super+t exec --no-startup-id ~/.config/i3/rotate-display.sh;layout toggle split
+
+
 # TODO Automatic screen detection, xrandr --auto if only single screen, xrandr custom if many
 # DO WITH A key combination which detects and syncs the current setup
 # TODO scratchpad permaconsole
