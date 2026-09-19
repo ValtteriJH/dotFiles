@@ -31,6 +31,15 @@ git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 sudo cp ./Alacritty.desktop /usr/share/applications
 sudo cp ./settings.desktop /usr/share/applications
 
+mkdir -p "$HOME/Downloads"
+
+curl -L \
+  "https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage" \
+  -o "$HOME/Downloads/nvim"
+
+chmod +x "$HOME/Downloads/nvim"
+sudo mv "$HOME/Downloads/nvim" /usr/bin/nvim
+
 
 sudo cp ./etc/logid.cfg /etc/
 sudo cp ./etc/tlp.conf /etc/ 
@@ -46,12 +55,11 @@ sudo cp -r ./pomodoro/ ~/.pomodoro/
 # FOSS projects:
 # https://github.com/zoltanp/xrandr-invert-colors
 # Necessary appimages
-# NVIM
 # Obsidian
 # Go
 # Shuffler
 # pomodoro-cli
-
+#
 #
 # Install keyd and xrandr-invert-colors and clone openpomo 
 # https://pachoyan.github.io/posts/wsl-configure-alacritty-windows/

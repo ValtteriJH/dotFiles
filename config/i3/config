@@ -6,7 +6,6 @@ set $alt Mod1
 font pango:~/.local/share/fonts/SauceCodeProNerdFontMono-Regular.ttf: SauceCodePro Nerd Font Mono,SauceCodePro NFM:style=Regular 9
 
 # use mouse+$super to drag floating windows to their wanted position
-floating_modifier $super
 #set $term kitty
 #set $term alacritty
 
@@ -164,11 +163,22 @@ bindsym $super+3 workspace 3:III
 bindsym $super+4 workspace 4:IV
 bindsym $super+5 workspace 5:V
 bindsym $super+6 workspace 6:VI
-
 bindsym $super+7 workspace 7:VII
 bindsym $super+8 workspace 8:VIII
 bindsym $super+9 workspace 9:IX
 bindsym $super+0 workspace 10:X
+
+
+bindsym $super+Control+1 workspace 11:XI
+bindsym $super+Control+2 workspace 12:XII
+bindsym $super+Control+3 workspace 13:XIII
+bindsym $super+Control+4 workspace 14:XIV
+bindsym $super+Control+5 workspace 15:XV
+bindsym $super+Control+6 workspace 16:XVI
+bindsym $super+Control+7 workspace 17:XVII
+bindsym $super+Control+8 workspace 18:XVIII
+bindsym $super+Control+9 workspace 19:XIX
+bindsym $super+Control+0 workspace 20:XX
 
 
 # move focused container to workspace
@@ -178,11 +188,22 @@ bindsym $super+Shift+3 move container to workspace 3:III
 bindsym $super+Shift+4 move container to workspace 4:IV
 bindsym $super+Shift+5 move container to workspace 5:V
 bindsym $super+Shift+6 move container to workspace 6:VI
-
 bindsym $super+Shift+7 move container to workspace 7:VII
 bindsym $super+Shift+8 move container to workspace 8:VIII
 bindsym $super+Shift+9 move container to workspace 9:IX
 bindsym $super+Shift+0 move container to workspace 10:X
+
+
+bindsym $super+Shift+Control+1 move container to workspace 11:XI
+bindsym $super+Shift+Control+2 move container to workspace 12:XII
+bindsym $super+Shift+Control+3 move container to workspace 13:XIII
+bindsym $super+Shift+Control+4 move container to workspace 14:XIV
+bindsym $super+Shift+Control+5 move container to workspace 15:XV
+bindsym $super+Shift+Control+6 move container to workspace 16:XVI
+bindsym $super+Shift+Control+7 move container to workspace 17:XVII
+bindsym $super+Shift+Control+8 move container to workspace 18:XVIII
+bindsym $super+Shift+Control+9 move container to workspace 19:XIX
+bindsym $super+Shift+Control+0 move container to workspace 20:XX
 
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -286,6 +307,8 @@ mouse_warping none
 exec hsetroot -fill ~/.config/wpShuffler/.wallpaper.jpg
 # Moving workspaces between screens 
 bindsym $super+p move workspace to output right
+bindsym $super+shift+j move workspace to output down
+bindsym $super+shift+k move workspace to output up
 bindsym $super+t exec --no-startup-id ~/.config/i3/rotate-display.sh;layout toggle split
 
 
